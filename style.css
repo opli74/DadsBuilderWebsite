@@ -153,8 +153,9 @@ body {
         height: 0.4em;
         left: 0.5em;
         position: relative;
-        top: 0.35em;
+        top: 0.4em;
         transform: rotate(-45deg);
+        transform-origin: center;
         vertical-align: top;
         width: 0.4em;
     }
