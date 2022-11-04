@@ -141,11 +141,12 @@ body {
 
     .nav-subcontent-parent:hover .chevron::after {
         transform: rotate(135deg);
+        top: 0.35em;
     }
 
     .chevron::after
     {
-        transition: transform 500ms cubic-bezier(.75,-0.72,.27,1.68);
+        transition: transform 500ms cubic-bezier(.75,-0.72,.27,1.68), top 350ms linear;
         border-style: solid;
         border-width: 0.1em 0.1em 0 0;
         content: '';
