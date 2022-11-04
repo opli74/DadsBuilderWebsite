@@ -141,7 +141,7 @@ body {
 
     .nav-subcontent-parent:hover .chevron::after {
         transform: rotate(135deg);
-        top: 0.35em;
+        top: 0.3em;
     }
 
     .chevron::after
