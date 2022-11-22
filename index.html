@@ -49,7 +49,11 @@
             <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
             <ul class="nav-contents">
                 <li><a href="#">Home</a></li>
-                <li class="nav-subcontent-parent"><a class="chevron" href="#">Services</a>
+                <li class="nav-subcontent-parent" onclick="clickEvent()"><a class="chevron" href="#">Services</a>
+                    <div class="cross-wrapper">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                    </div>
                     <div class="nav-sub-wrapper">
                         <ul class="nav-subcontents">
                             <li class="subContentHover"><a href="#" >Refurbishments</a></li>
@@ -58,8 +62,8 @@
                         </ul>
                     </div>
                 </li>
-                <li class="margin-top"><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li id="navAbout"><a href="#">About</a></li>
+                <li id="navContact"><a href="#">Contact</a></li>
             </ul>
             <label for="nav-checkbox" class="nav-checkbox-label">
                 <span></span>
@@ -153,5 +157,16 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+
+    <script>
+        const navAbout = document.querySelector("#navAbout");
+        const navContact = document.querySelector("navContact");
+
+        function clickEvent() {
+            navAbout.classList.toggle("margin-top");
+            navContact.classList.toggle("margin-top");
+        }
+
+    </script>
 </body>
 </html>

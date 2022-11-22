@@ -137,7 +137,6 @@ body {
         font-weight: 545;
     }
 
-
     .nav-subcontent-parent {
         position: relative;
     }
@@ -167,7 +166,7 @@ body {
     .nav-subcontent-parent:hover ul {
         opacity: 1;
         transform: scale(1);
-        transition: transform 0ms linear 0ms, opacity 125ms linear;
+        transition: transform 0ms linear 150ms, opacity 125ms linear 150ms;
     }
 
     .nav-subcontent-parent:hover .nav-sub-wrapper {
@@ -243,6 +242,10 @@ body {
         align-items: center;
         justify-content: center;
         padding: 5px;
+    }
+
+    .margin-top {
+        margin-top: 1px;
     }
 
     .nav-contents {
@@ -326,46 +329,45 @@ body {
         transition: transform 0ms linear 0ms, opacity 125ms linear;
     }
 
+    .nav-subcontent-parent:hover .nav-sub-wrapper {
+        opacity: 1;
+        transform: scale(1);
+        transition: transform 0ms linear 0ms, opacity 125ms linear;
+        height: fit-content;
+    }
+
     .nav-sub-wrapper {
-        position: absolute;
         top: 100%;
         width: 100%;
-        height: fit-content;
-        transition: transform 300ms ease-out 0ms, opacity 0 linear;
+        transform: scale(0);
+        transition: transform 300ms ease-out 0ms, opacity 0 linear, max-height 250ms ease-out;
     }
 
     .nav-subcontent-parent ul {
-        display: none;
+        display: block;
         transform: scale(0);
         opacity: 0;
-        position: absolute;
         top: 100%;
         width: 100%;
-        height: fit-content;
         margin: 0;
         padding: 0;
-        background-color: var(--col-accent);
-        border: 2px solid var(--col-accent);
-        transition: transform 0ms linear 200ms, opacity 150ms linear;
+        transition: transform 0ms linear 200ms, opacity 150ms linear, max-height 250ms ease-out;
     }
 
     .nav-subcontent-parent ul li {
         display: block;
         padding: 10px;
         position: relative;
+        width: 100%;
 
     }
 
-    .nav-subcontent-parent li:hover {
-        background-color: white;
-    }
-
-    .nav-subcontent-parent li:hover a {
-        color: black !important;
+    .nav-subcontent-parent ul li:first-child {
+        padding-top: 20px;
     }
 
     .nav-subcontent-parent ul a {
-        color: white !important;
+        color: black;
     }
 
     .nav-checkbox:checked ~ .nav-contents{transform: scale(1,1);
