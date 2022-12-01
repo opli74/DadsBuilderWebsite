@@ -278,15 +278,8 @@ body {
         /* position: relative; */
     }
 
-    .nav-contents li:not(:last-child)::after {
-        content: '';
-        width: 100%;
-        height: 1px;
-        position: absolute;
-        background-color: black;
-        display: block;
-        bottom: 0;
-        opacity: 0;
+    .nav-contents > li:not(:first-child){
+        border-top: 2px dashed rgba(0, 0, 0, 0.055);
     }
 
     .nav-contents a {
@@ -300,16 +293,11 @@ body {
         transition: opacity 100ms linear 0ms;
     }
 
-    
     .nav-subcontent-parent {
         position: relative;
     }
 
-    .nav-subcontent-parent:hover::before {
-        transform: rotate(-45deg) scale(1.25);
-    }
-
-    .nav-subcontent-parent::before {
+    .chevron::before {
         content: '+';
         position: absolute;
         top: 0;
@@ -329,24 +317,16 @@ body {
         transition: transform 0ms linear 0ms, opacity 125ms linear;
     }
 
-    .nav-subcontent-parent:hover .nav-sub-wrapper {
-        opacity: 1;
-        transform: scale(1);
-        transition: transform 0ms linear 0ms, opacity 125ms linear;
-        height: fit-content;
-    }
-
     .nav-sub-wrapper {
         top: 100%;
         width: 100%;
         transform: scale(0);
-        transition: transform 300ms ease-out 0ms, opacity 0 linear, max-height 250ms ease-out;
+        opacity: 0;
+        transition: transform 350ms ease-out 200ms, opacity 200ms linear 0ms;
     }
 
     .nav-subcontent-parent ul {
-        display: block;
-        transform: scale(0);
-        opacity: 0;
+        position: absolute;
         top: 100%;
         width: 100%;
         margin: 0;
@@ -356,18 +336,20 @@ body {
 
     .nav-subcontent-parent ul li {
         display: block;
-        padding: 10px;
+        padding: 15px;
         position: relative;
         width: 100%;
-
+        text-align: left;
+        margin-left: 40%;
     }
 
     .nav-subcontent-parent ul li:first-child {
-        padding-top: 20px;
+        padding-top: 30px;
     }
 
     .nav-subcontent-parent ul a {
         color: black;
+        font-size: 1.35rem;
     }
 
     .nav-checkbox:checked ~ .nav-contents{transform: scale(1,1);
@@ -377,9 +359,7 @@ body {
     .nav-checkbox:checked ~ .nav-contents a {opacity: 1;
     transition: opacity 100ms linear 100ms;}
 
-    .nav-checkbox:not(:checked):hover ~ .nav-checkbox-label span::before {bottom: .35rem;}
-
-    .nav-checkbox:not(:checked):hover ~ .nav-checkbox-label span::after{top: .35rem;}
+    .nav-checkbox:not(:checked):hover ~ .nav-checkbox-label span {transform: scale(1.25);}
 
     .nav-checkbox:checked ~ .nav-checkbox-label span::before {
         transform: rotate(45deg)
@@ -391,6 +371,25 @@ body {
         top: 0rem;
     }
     .nav-checkbox:checked:hover ~ .nav-checkbox-label span {transform: scale(1.25);}
+
+    #navAbout { 
+        margin-top: 0;
+        transition: margin-top 200ms ease-out 150ms;}
+
+    .margin-top {
+        margin-top: 180px !important;
+        transition: margin-top 200ms ease-out 0ms !important;
+    }
+    
+    .rotate {
+        transform: rotate(-45deg) scale(1.25);
+    }
+
+    .children {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        transition: opacity 200ms linear 200ms, transform 350ms ease-out 0ms;
+    }
     
 }
 

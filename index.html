@@ -52,21 +52,21 @@
             <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
             <ul class="nav-contents">
                 <li><a href="#">Home</a></li>
-                <li class="nav-subcontent-parent" onclick="clickEvent()"><a class="chevron" href="#">Services</a>
-                    <div class="cross-wrapper">
-                        <span class="one"></span>
-                        <span class="two"></span>
-                    </div>
-                    <div class="nav-sub-wrapper">
+                <li class="nav-subcontent-parent" onclick="clickEvent()">
+                    <a class="chevron" href="#">
+                        Services                
+                        <span></span>
+                    </a>
+                    <div class="nav-sub-wrapper" id="childrenWrapper">
                         <ul class="nav-subcontents">
-                            <li class="subContentHover"><a href="#" >Refurbishments</a></li>
-                            <li class="subContentHover"><a href="#">Extensions</a></li>
-                            <li class="subContentHover"><a href="#">Repairs</a></li>
+                            <li><a href="#" >Refurbishments</a></li>
+                            <li><a href="#">Extensions</a></li>
+                            <li><a href="#">Repairs</a></li>
                         </ul>
                     </div>
                 </li>
                 <li id="navAbout"><a href="#">About</a></li>
-                <li id="navContact"><a href="#">Contact</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <label for="nav-checkbox" class="nav-checkbox-label">
                 <span></span>
@@ -162,12 +162,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
 
     <script>
+
         const navAbout = document.querySelector("#navAbout");
-        const navContact = document.querySelector("navContact");
+        const showChildren = document.querySelector("#childrenWrapper");
 
         function clickEvent() {
             navAbout.classList.toggle("margin-top");
-            navContact.classList.toggle("margin-top");
+            showChildren.classList.toggle("children");
         }
 
     </script>
