@@ -145,8 +145,8 @@ body {
 
     .nav-contents > li > a {
         transition:  transform 50ms linear;
-        font-size: 1.05rem;
-        font-weight: 545;
+        font-size: 1.15rem;
+        font-weight: 500;
     }
 
     .nav-subcontent-parent {
@@ -323,8 +323,6 @@ body {
         position: relative;
     }
 
-    
-
     .nav-subcontent-parent:hover ul {
         opacity: 1;
         transform: scale(1);
@@ -339,9 +337,6 @@ body {
         transition: transform 350ms ease-out 200ms, opacity 200ms linear 0ms;
     }
 
-    .nav-subcontent-parent {
-        top: -3px;
-    }
     .nav-subcontent-parent ul {
         position: absolute;
         top: 100%;
@@ -359,7 +354,7 @@ body {
     }
 
     .nav-subcontent-parent ul li:first-child {
-        padding-top: 30px;
+        margin-top: 20px;
     }
 
     .nav-subcontent-parent ul a {
@@ -406,7 +401,7 @@ body {
         transition: margin-top 200ms ease-out 200ms;}
 
     .margin-top {
-        margin-top: 163px !important;
+        margin-top: 168px !important;
         transition: margin-top 200ms ease-out 0ms !important;
     }
     
