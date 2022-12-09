@@ -227,8 +227,7 @@ body {
 
     .nav-subcontent-parent ul li a {
         color: white !important;
-        width: 100%;
-        height: 100%;
+        font-size: 1.1rem;
         position: relative;
     }
 
@@ -362,7 +361,6 @@ body {
         color: black;
         font-size: 1.35rem;
         z-index: 9999;
-
     }
 
     .nav-subcontent-parent ul li:hover {
@@ -383,14 +381,27 @@ body {
     .nav-checkbox:not(:checked):hover ~ .nav-checkbox-label span {transform: scale(1.25);}
 
     .nav-checkbox:checked ~ .nav-checkbox-label span::before {
-        transform: rotate(45deg)
-        ;bottom: 0rem;
+        transform: rotate(45deg);
+        bottom: 0rem;
     }
+/* 
+    .mobile-wrapper {
+        height: 100%;
+        width: auto;
+        margin-left: 50%;
+        text-align: left;
+        position: relative;
+    } */
+
+    /* .mobile-wrapper a {
+        left: -60px;
+    } */
 
     .nav-checkbox:checked ~ .nav-checkbox-label span::after {
         transform: rotate(-45deg);
         top: 0rem;
     }
+
     .nav-checkbox:checked:hover ~ .nav-checkbox-label span {transform: scale(1.25);}
 
     .nav-checkbox:not(:checked) ~ .parent {
