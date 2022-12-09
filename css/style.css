@@ -245,6 +245,7 @@ body {
 {
     .nav-wrapper {
         height: fit-content;
+        border-bottom: none;
     }
 
     .nav {
