@@ -123,9 +123,9 @@
 
         <div class="container-cards">
 
-            <div class="card" onclick="this.classList.toggle('engaged')">
+            <div class="card" ">
                 <div class="title-wrap">
-                    <h4>Title</h4>
+                    <h4 class="card-title">Quality Guarantee</h4>
                 </div>
                 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, in. Ad delectus voluptatibus natus asperiores odit et at iusto aspernatur, dolorum minus minima? Veritatis praesentium ut rerum qui animi sapiente dicta laboriosam sequi ratione quidem.</p>
@@ -133,9 +133,9 @@
                 <a class="chevron-card"></a>
             </div>
 
-            <div class="card" onclick="this.classList.toggle('engaged')">
+            <div class="card" ">
                 <div class="title-wrap">
-                    <h4>Title</h4>
+                    <h4 class="card-title">Maintanence / Emergency Call outs</h4>
                 </div>
                 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, in. Ad delectus voluptatibus natus asperiores odit et at iusto aspernatur, dolorum minus minima? Veritatis praesentium ut rerum qui animi sapiente dicta laboriosam sequi ratione quidem.</p>
@@ -143,9 +143,11 @@
                 <a class="chevron-card"></a>
             </div>
 
-            <div class="card" onclick="this.classList.toggle('engaged')">
+            <!-- onclick="this.classList.toggle('engaged')" -->
+
+            <div class="card" >
                 <div class="title-wrap">
-                    <h4>Title</h4>
+                    <h4 class="card-title">50 Years Experience</h4>
                 </div>
                 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, in. Ad delectus voluptatibus natus asperiores odit et at iusto aspernatur, dolorum minus minima? Veritatis praesentium ut rerum qui animi sapiente dicta laboriosam sequi ratione quidem.</p>
@@ -223,6 +225,55 @@
     <script>
         const checkbox = document.querySelector(".nav-checkbox");
         const checkboxLabel = document.querySelector(".nav-checkbox-label");
+        const cardTitles = document.querySelectorAll(".card-title");
+        const cardParent = document.getElementsByClassName("card")
+        const cardParentArray = document.querySelectorAll(".card");
+
+        const parentHeight = cardParent[0].getBoundingClientRect().height;
+
+        function transformTop(divisor, element, parent) {
+
+            let parentHeight = parseInt(window.getComputedStyle(parent).height);
+             
+            let titleHeight = element.getBoundingClientRect().height;
+
+            let top = (parentHeight / divisor) - (titleHeight / 2) - 3;
+
+            element.style.transform = "translateY("+top+"px)";
+
+        }
+
+
+
+        cardTitles.forEach(function(element) {
+
+            let titleHeight = element.getBoundingClientRect().height;
+
+            let top = (parentHeight / 2) - (titleHeight / 2) - 3;
+
+            element.style.transform = "translateY("+top+"px)";
+
+
+        });
+
+
+        function cardClickListener() {
+
+            jQuery(this).toggleClass("engaged");
+
+            let child = this.querySelector(".card-title");
+
+            if (this.classList.contains("engaged"))
+            {
+                console.log("1");
+                transformTop(3, child, this);
+            } 
+            else 
+            {
+                console.log("2");
+                transformTop(3.25, child, this);
+            }
+        }
 
         const checkboxClickListener = (event) => {
             if (checkbox.checked == false)
@@ -234,6 +285,11 @@
         }
 
         checkbox.addEventListener('click', checkboxClickListener);
+
+        for (var i = 0; i < cardParent.length; i++) {
+            cardParent[i].addEventListener('click', cardClickListener);
+        }
+
     </script>
 </body>
 </html>
