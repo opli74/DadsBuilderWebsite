@@ -60,7 +60,7 @@
                     <a>Home</a>
                 </li>
 
-                <li class="nav-subcontent-parent" onclick="clickEvent">
+                <li class="nav-subcontent-parent" onclick="clickEvent();">
                     <a class="chevron">
                         Services                
                     </a>
@@ -305,9 +305,9 @@
         const checkboxClickListener = (event) => {
             if (checkbox.checked == false)
             {
-                navAbout.classList.add("margin-top");
-                showChildren.classList.add("children");
-                parent.classList.add("parent");
+                navAbout.classList.remove("margin-top");
+                showChildren.classList.remove("children");
+                parent.classList.remove("parent");
 
                 enableScroll();
             }
