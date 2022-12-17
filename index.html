@@ -228,6 +228,16 @@
         const cardTitles = document.querySelectorAll(".card-title");
         const cardParent = document.getElementsByClassName("card")
         const cardParentArray = document.querySelectorAll(".card");
+        const navAbout = document.querySelectorAll("#navAbout")[0];
+        const showChildren = document.querySelectorAll("#childrenWrapper")[0];
+        const parent = document.querySelectorAll(".nav-subcontent-parent")[0];
+        const parentList = document.querySelectorAll(".nav-subcontent-wrapper")[0];
+
+        function clickEvent() {
+            jQuery(navAbout).toggleClass("margin-top");
+            jQuery(showChildren).toggleClass("children");
+            jQuery(parent).toggleClass("parent");
+        }
 
         const parentHeight = cardParent[0].getBoundingClientRect().height;
 
