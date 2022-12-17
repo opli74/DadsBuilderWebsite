@@ -1,7 +1,7 @@
-const navAbout = document.querySelectorAll("#navAbout");
-const showChildren = document.querySelectorAll("#childrenWrapper");
-const parent = document.querySelectorAll(".nav-subcontent-parent")
-const parentList = document.querySelectorAll(".nav-subcontent-wrapper");
+const navAbout = document.querySelector("#navAbout");
+const showChildren = document.querySelector("#childrenWrapper");
+const parent = document.querySelector(".nav-subcontent-parent")
+const parentList = document.querySelectorAll(".nav-subcontent-wrapper")[0];
 
 function clickEvent() {
     jQuery(navAbout).toggleClass("margin-top");
