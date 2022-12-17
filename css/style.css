@@ -16,11 +16,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    text-rendering: optimizeLegibility;
 }
 
 .nav-wrapper {
-    z-index: 999 !important;
+    z-index: 9999 !important;
     top: 0;
     position: fixed;
     width: 100%;
@@ -90,7 +89,7 @@ body {
         margin: auto;
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 1fr) .5fr;
-        z-index: 999 !important;
+
     }
 
     .logo,
@@ -187,6 +186,7 @@ body {
     }
 
     .nav-sub-wrapper {
+        z-index: -1 ;
         transform: translateY(7px);
         position: absolute;
         top: 100%;
@@ -196,6 +196,7 @@ body {
     }
 
     .nav-subcontent-parent ul {
+        
         transform: scale(0);
         opacity: 0;
         position: absolute;
@@ -206,16 +207,17 @@ body {
         margin: 0;
         padding: 0;
         background-color: var(--col-accent);
-        border: 2px solid var(--col-accent);
         transition: transform 0ms linear 200ms, opacity 150ms linear;
+        box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.11);
     }
 
     .nav-subcontent-parent ul li {
         display: block;
         padding: 10px;
         width: 100%;
-        height: 100%;;
+        height: 100%;
     }
+
 
     .nav-subcontent-parent li:hover {
         background-color: white;
@@ -430,11 +432,6 @@ body {
     .parent > a {
         color: white;
     }
-}
-
-@media screen and (max-width: 600px) 
-{
-
 }
 
 .hero {
@@ -671,15 +668,15 @@ body {
     min-width: 100%;
     image-rendering: auto;
     filter: blur(0px) grayscale(90%);
-    -webkit-filter: blur(0px) grayscale(90%);
+    -webkit-filter: blur(3px) grayscale(90%);
     z-index: -99;
 }
 
 .about-img-overlay
 {
     position: absolute;
-    background-color: rgb(209, 209, 209);
-    opacity: 0.95;
+    background-color: rgb(243, 243, 243);
+    opacity: 0.90;
     width: 100%;
     height: 100%;
     z-index: -98;
@@ -700,7 +697,8 @@ body {
 }
 
 .container-text p {
-    font-size: 1.35rem;
+    font-size: 1.425rem;
+    font-weight: 500;
     line-height: 1.35;
     text-align: center;
     letter-spacing: 0.5px;
@@ -884,6 +882,11 @@ body {
     flex-direction: column;
 }
 
+.services-wrapper .container-text {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 
 .white h3{
     color: white !important;
@@ -898,33 +901,74 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 25px;
+    row-gap: 50px;
     width: 75%;
-    margin-bottom: 75px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.services-cards .hero-contact-wrapper {
+    background-color: var(--col-accent);
+    margin: 0px auto;
+    box-shadow: 0px 8px 16px rgb(0 0 0 / 20%);
+    margin-top: 10px;
+    height: 50px !important;
+}
+
+.services-cards .hero-contact-wrapper:hover {
+    background-color: white;
+}
+
+.services-cards .hero-contact-wrapper:hover .hero-contact {
+    background-color: var(--col-accent);
+}
+
+.services-cards .hero-contact-wrapper:hover p {
+    color: white;
+}
+
+.services-cards .hero-contact {
+    background-color: white;
+}
+
+.services-cards .hero-contact-wrapper p {
+    color: black;
 }
 
 .card-wrap {
-    height: 350px;
-    width: 300px;
-    transition: transform 300ms ease-out, background-color 500ms ease-out;
+    height: 375px;
+    width: 30%;
+    transition: transform 300ms ease-out, background-color 500ms ease-out, box-shadow 300ms ease-out;
     padding: 25px;
     /* border: 2px solid transparent; */
     border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 20px rgb(0 0 0 / 15%);
+}
+
+.card-wrap:hover {
+    z-index: 99;
+    transform: scale(1.05);
+    box-shadow: 0px 16px 64px rgb(0 0 0 / 14%);
 }
 
 .card-wrap span {
-    width: 500px;
+    display: block;
+    width: fit-content;
+    position: relative;
     text-align: center;
     font-size: 1.8rem;
-    margin-bottom: 40px;
-    margin-top: 20px;
     color: white;
+    margin: auto !important;
 }
 
 .card-wrap h4 {
     text-align: center;
     font-size: 1.8rem;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
     color: white;
 }
 
