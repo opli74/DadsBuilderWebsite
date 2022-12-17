@@ -827,6 +827,13 @@ body {
     transition:  background-color 250ms linear;
 }
 
+@media screen and (max-width: 700px) {
+    .title-wrap {
+        height: 125px;
+    }
+    
+}
+
 
 .card h4 {
     display: block;
