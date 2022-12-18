@@ -123,7 +123,7 @@
 
         <div class="container-cards">
 
-            <div class="card" ">
+            <div class="card">
                 <div class="title-wrap">
                     <h4 class="card-title">Quality Guarantee</h4>
                 </div>
@@ -277,6 +277,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="js/mobileNavClickListener.js"></script>
+    <script src="js/matchMediaFunction.js"></script>
 
     <script>
         const checkbox = document.querySelector(".nav-checkbox");
@@ -310,21 +311,28 @@
         }
 
         function disableScroll() {
-            // Get the current page scroll position
-            scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop;
-            scrollLeft =
-            window.pageXOffset || document.documentElement.scrollLeft,
-          
-                // if any scroll is attempted,
-                // set this to the previous value
-                window.onscroll = function() {
-                    window.scrollTo(scrollLeft, scrollTop);
-                };
+
+            if (matchMediaWindow(1000, "max"))
+            {
+                // Get the current page scroll position
+                scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+                scrollLeft =
+                window.pageXOffset || document.documentElement.scrollLeft,
+            
+                    // if any scroll is attempted,
+                    // set this to the previous value
+                    window.onscroll = function() {
+                        window.scrollTo(scrollLeft, scrollTop);
+                    };
+            }
         }
           
         function enableScroll() {
-            window.onscroll = function() {};
+            if (matchMediaWindow(1000, "max"))
+            {
+                window.onscroll = function() {};
+            }
         }
 
 
@@ -342,18 +350,18 @@
 
         function cardClickListener() {
 
+            console.log("clicked");
+
             jQuery(this).toggleClass("engaged");
 
             let child = this.querySelector(".card-title");
 
             if (this.classList.contains("engaged"))
             {
-                console.log("1");
                 transformTop(3, child, this);
             } 
             else 
             {
-                console.log("2");
                 transformTop(3.25, child, this);
             }
         }
@@ -373,6 +381,8 @@
                 disableScroll();
             }
         }
+
+        //EVENT LISTENERS
 
         checkbox.addEventListener('click', checkboxClickListener);
 
