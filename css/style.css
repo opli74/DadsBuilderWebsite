@@ -755,6 +755,7 @@ body {
     cursor: pointer;
     padding-left: 15px ;
     padding-right: 15px;
+    will-change: height;
 }
 
 @media screen and (max-width: 1120px ){
