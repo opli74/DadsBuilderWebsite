@@ -281,9 +281,8 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        transform: scale(0, 1);
-        transition: opacity 300ms linear 0ms, transform 350ms ease-out 0ms;
-        transform-origin: left;;
+        transform: translateX(-110vw);
+        transition: opacity 350ms ease-out 0ms, transform 350ms ease-out 0ms;
     }
 
     .nav-contents li {
@@ -319,7 +318,7 @@ body {
         height: 100%;
         text-align: center;
         opacity: 0;
-        transition: opacity 100ms linear 0ms;
+        transition: opacity 350ms linear 0ms;
     } 
 
     .nav-subcontent-parent {
@@ -329,7 +328,7 @@ body {
     .nav-subcontent-parent:hover ul {
         opacity: 1;
         transform: scale(1);
-        transition: transform 0ms linear 0ms, opacity 125ms linear;
+        transition: opacity 250ms linear;
     }
 
     .nav-sub-wrapper {
@@ -337,7 +336,7 @@ body {
         width: 100%;
         transform: scale(0);
         opacity: 0;
-        transition: transform 350ms ease-out 200ms, opacity 200ms linear 0ms;
+        transition: transform 250ms linear 250ms,  opacity 250ms linear 0ms;
     }
 
     .nav-subcontent-parent ul {
@@ -346,7 +345,7 @@ body {
         width: 100%;
         margin: 0;
         padding: 0;
-        transition: transform 0ms linear 200ms, opacity 150ms linear, max-height 250ms ease-out;
+        transition:  opacity 250ms linear, max-height 250ms linear;
     }
 
     .nav-subcontent-parent ul li {
@@ -363,7 +362,7 @@ body {
 
     .nav-subcontent-parent ul a {
         color: black;
-        font-size: 1.35rem;
+        font-size: 1.4rem;
         z-index: 9999;
     }
 
@@ -375,12 +374,12 @@ body {
         color: white;
     }
 
-    .nav-checkbox:checked ~ .nav-contents{transform: scale(1,1);
+    .nav-checkbox:checked ~ .nav-contents{transform: translateX(0);
         opacity: 1;
-        transition: opacity 200ms linear 0ms, transform 350ms ease-out 0ms;
+        transition: opacity 350ms linear 0ms, transform 350ms ease-out 0ms;
     }
     .nav-checkbox:checked ~ .nav-contents a {opacity: 1;
-    transition: opacity 250ms linear 150ms;}
+    transition: opacity 350ms linear 0ms;}
 
     .nav-checkbox:not(:checked):hover ~ .nav-checkbox-label span {transform: scale(1.25);}
 
@@ -424,8 +423,9 @@ body {
     .children {
         opacity: 1 !important;
         transform: scale(1) !important;
-        transition: opacity 200ms linear 200ms, transform 350ms ease-out 0ms;
+        transition: opacity 250ms linear 250ms, transform 250ms linear 0ms;
     }
+
     .parent {
         background-color: var(--col-accent);
         border-radius: 3px;
@@ -495,7 +495,7 @@ body {
 }
 
 .hero-text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 1.5rem;
     letter-spacing: 1px;
     margin: 0;
@@ -511,7 +511,7 @@ body {
     padding: 2px;
     position: relative;
     box-shadow: 0px 10px 24px rgb(0 0 0 / 0.5);  
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .hero-contact {
@@ -576,7 +576,7 @@ body {
     }
     
     .hero-text {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.5rem;
         letter-spacing: 1px;
         /* margin: 0;
@@ -685,7 +685,6 @@ body {
 
 .container-text {
     width: 75%;
- 
     margin: auto;
     margin-top: 125px;
 }
@@ -705,8 +704,6 @@ body {
     letter-spacing: 0.5px;
     color: rgb(39, 39, 39);
 }
-
-
 
 .container-cards {
     width: 75%;
@@ -739,10 +736,10 @@ body {
         margin-top: 50px;
         margin-bottom: 50px;
         flex-direction: column;
-        gap: 25px;
         height: 1200px;
     }
 }
+
 .card {
     width: 325px;
     background-color: #B00000;
@@ -770,6 +767,7 @@ body {
 @media screen and (max-width: 1000px){
     .card {
         width: 52.5%;
+        margin: 15px;
     }
     
 }
@@ -834,9 +832,7 @@ body {
     .title-wrap {
         height: 135px;
     }
-    
 }
-
 
 .card h4 {
     display: block;
@@ -919,19 +915,19 @@ body {
 }
 
 .services-cards .hero-contact-wrapper:hover .hero-contact {
-    background-color: var(--col-accent);
-}
-
-.services-cards .hero-contact-wrapper:hover p {
-    color: white;
-}
-
-.services-cards .hero-contact {
     background-color: white;
 }
 
+.services-cards .hero-contact-wrapper:hover p {
+    color: var(--col-accent)
+}
+
+.services-cards .hero-contact {
+    background-color: var(--col-accent)
+}
+
 .services-cards .hero-contact-wrapper p {
-    color: black;
+    color: white
 }
 
 .card-wrap {

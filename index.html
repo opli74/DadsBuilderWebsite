@@ -278,6 +278,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="js/mobileNavClickListener.js"></script>
     <script src="js/matchMediaFunction.js"></script>
+    <script src="js/preventScroll.js"></script>
 
     <script>
         const checkbox = document.querySelector(".nav-checkbox");
@@ -310,30 +311,30 @@
 
         }
 
-        function disableScroll() {
+        // function disableScroll() {
 
-            if (matchMediaWindow(1000, "max"))
-            {
-                // Get the current page scroll position
-                scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
-                scrollLeft =
-                window.pageXOffset || document.documentElement.scrollLeft,
+        //     if (matchMediaWindow(1000, "max"))
+        //     {
+        //         // Get the current page scroll position
+        //         scrollTop =
+        //         window.pageYOffset || document.documentElement.scrollTop;
+        //         scrollLeft =
+        //         window.pageXOffset || document.documentElement.scrollLeft,
             
-                    // if any scroll is attempted,
-                    // set this to the previous value
-                    window.onscroll = function() {
-                        window.scrollTo(scrollLeft, scrollTop);
-                    };
-            }
-        }
+        //             // if any scroll is attempted,
+        //             // set this to the previous value
+        //             window.onscroll = function() {
+        //                 window.scrollTo(scrollLeft, scrollTop);
+        //             };
+        //     }
+        // }
           
-        function enableScroll() {
-            if (matchMediaWindow(1000, "max"))
-            {
-                window.onscroll = function() {};
-            }
-        }
+        // function enableScroll() {
+        //     if (matchMediaWindow(1000, "max"))
+        //     {
+        //         window.onscroll = function() {};
+        //     }
+        // }
 
 
         cardTitles.forEach(function(element) {
