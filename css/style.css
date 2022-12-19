@@ -931,7 +931,7 @@ body {
 }
 
 .card-wrap {
-    max-height: fit-content;
+    height: min-content;
     width: 350px;
     transition: transform 300ms ease-out, background-color 500ms ease-out, box-shadow 300ms ease-out;
     padding: 25px;
