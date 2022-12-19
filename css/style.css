@@ -953,7 +953,7 @@ body {
 @media screen and (max-width: 650px) {
     .card-wrap {
         width: 100%;
-        height: 385px;
+        height: fit-content;
     }
     
 }
