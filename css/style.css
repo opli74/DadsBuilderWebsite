@@ -558,8 +558,6 @@ body {
     color: var(--col-accent)
 }
 
-
-
 @media screen and (max-width: 1300px) 
 {
     .hero-container {
@@ -591,12 +589,32 @@ body {
         width: 100% !important;
     }
     .contact-info-bar h5 {
-        font-size: 1.4rem !important;
+        font-size: 1.35rem !important;
     }
     .contact-info-bar p {
-        font-size: 1.55rem !important;
+        font-size: 1.5rem !important;
     }
 
+}
+
+@media screen and (max-width: 800px)
+{
+    .contact-info-bar h5 {
+        font-size: 1.1rem !important;
+    }
+    .contact-info-bar p {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media screen and (max-width: 680px)
+{
+    .contact-info-bar h5 {
+        font-size: 1rem !important;
+    }
+    .contact-info-bar p {
+        font-size: 1rem !important;
+    }
 }
 
 @media screen and (max-width: 600px) 
@@ -620,13 +638,6 @@ body {
     }
     .hero-contact {
         transition: transform 100ms linear, box-shadow 150ms linear;
-    }
-
-    .contact-info-bar h5 {
-        font-size: 1rem !important;
-    }
-    .contact-info-bar p {
-        font-size: 1rem !important;
     }
 }
 
@@ -672,14 +683,14 @@ body {
 }
 
 .contact-info-bar h5 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 0;
 }
 
 .contact-info-bar p {
     color: var(--col-accent);
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 1.55rem;
     margin-top: 5px;
 }
 
